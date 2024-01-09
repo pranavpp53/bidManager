@@ -3,7 +3,13 @@ import './project.css'
 
 function Projects() {
     const [projectDetail,setProjectDetail]=useState([
-        {num:1,name:'2X4 Drop-in-T-Bar(1/2 Flex)',length:'100 M',quan:'-'}
+        {num:1,name:'2X4 Drop-in-T-Bar(1/2 Flex)',length:'100 M',quan:'-'},
+        {num:2,name:'Surface Fluor Fixt',length:'-',quan:'120'},
+        {num:3,name:'1/2 EMT DC SS Connector',length:'-',quan:'270'},
+        {num:4,name:'2X4 Drop-in-T-Bar(1 Flex)',length:'1200 M',quan:'-'},
+        {num:5,name:'3 EMT DC SS Connector',length:'-',quan:'500'},
+        {num:6,name:'2X6 Surface Fluor Fixt',length:'-',quan:'1200'}
+        
     ])
   return (
     <div>

@@ -1,78 +1,57 @@
 import React, { useState } from 'react'
-import './catogaries.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 
 
-function Catogaries() {
-    const [categoryLists, setCategoryLists] = useState([
+function Subcategories() {
+    const [SubCategoryLists, setSubCategoryLists] = useState([
         {
             num: 1,
-            name: 'Fixtures',
+            name: 'Recessed Fluroescent',
             type: 'C'
         },
         {
             num: 2,
-            name: 'switches',
+            name: 'Surface Fluorescent',
             type: 'C'
         },
         {
             num: 3,
-            name: 'Receptacles',
+            name: 'Recessed Incandescent',
             type: 'C'
         },
         {
             num: 4,
-            name: 'Computer & Phone',
+            name: 'Surface Incandascent',
             type: 'C'
         },
         {
             num: 5,
-            name: 'Fire Alarm',
+            name: 'Recessed HO',
             type: 'C'
         },
         {
             num: 6,
-            name: 'EMT (Branch)',
+            name: 'Surface HO',
             type: 'C'
         },
         {
             num: 7,
-            name: 'EMT (Feeder)',
+            name: 'Exit & Emergency',
             type: 'C'
         },
         {
             num: 8,
-            name: 'GRC (Feeder)',
+            name: 'Fans & Miscellaneous',
             type: 'C'
         },
         {
             num: 9,
-            name: 'GRC (Branch)',
+            name: 'Spec Fixtures ( Type A.... )',
             type: 'C'
         },
         {
             num: 10,
-            name: 'Cable (Branch)',
-            type: 'C'
-        },
-        {
-            num: 11,
-            name: 'Cable (Feeder)',
-            type: 'C'
-        },
-        {
-            num: 12,
-            name: 'Services',
-            type: 'C'
-        },
-        {
-            num: 13,
-            name: 'Panels',
-            type: 'C'
-        },
-        {
-            num: 14,
-            name: 'Manual Disconnects',
+            name: 'Fixture Connections',
             type: 'C'
         }
     ])
@@ -81,7 +60,7 @@ function Catogaries() {
 
     const navigate = useNavigate();
 
-    const filteredCategories = categoryLists.filter((item) =>
+    const filteredCategories = SubCategoryLists.filter((item) =>
         item.name.toLowerCase().includes(searchKey.toLowerCase())
     );
 
@@ -90,31 +69,31 @@ function Catogaries() {
     };
 
     const handleNav = () => {
-        navigate('/subCat');
+        navigate('/assemble');
     };
+
 
     return (
         <div>
-            <div className='d-flex justify-content-between px-5 left-headings pt-5 pb-4'>
+            <div className='d-flex justify-content-between left-headings px-5 pt-5 pb-4'>
                 <div className=''>
-                    <i class="fa-solid fa-left-long me-3"></i>
-                    <strong className='category_Headings'>Categories</strong>
+                    <Link to={'/'} className='text-black'><i class="fa-solid fa-left-long me-3"></i></Link>
+                    <strong className='category_Headings'>Sub Categories</strong>
                 </div>
                 <div>
                     <input
                         className='category_search_input'
-                        placeholder='Search Categories'
+                        placeholder='Search Sub Categories'
                         type="search"
                         value={searchKey}
                         onChange={handleSearchChange}
-                        
                     />
                 </div>
             </div>
 
-            <div className='p-2 table-cont'>
+            <div className='p-3 table-cont'>
 
-                <table className="table">
+                <table class="table">
                     <thead>
                         <tr>
                             <th scope="col" className='cat-table-head'>Sl No</th>
@@ -129,7 +108,7 @@ function Catogaries() {
                                 <th scope="row">{item.num}</th>
                                 <td>{item.name}</td>
                                 <td>{item.type}</td>
-                                <td><h4><i className="fa-solid  fa-right-long right-arrow-2 text-primary"></i></h4></td>
+                                <td><h4><i className="fa-solid fa-right-long right-arrow-2 text-primary"></i></h4></td>
                             </tr>
                         ))}
                         {filteredCategories.length === 0 && (
@@ -144,4 +123,4 @@ function Catogaries() {
     )
 }
 
-export default Catogaries
+export default Subcategories

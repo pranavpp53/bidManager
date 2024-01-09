@@ -3,6 +3,9 @@ import Header from './Header'
 import Aside from './Aside'
 import Catogaries from './Tables/Catogaries'
 import Job from './Tables/Job'
+import { Route, Routes } from 'react-router-dom'
+import Subcategories from './Subcategories'
+import Assemblies from './Tables/Assemblies'
 
 
 function Home() {
@@ -15,7 +18,11 @@ function Home() {
         <Aside></Aside>
         <div className='main_parent'>
           <div className='categories_parent'>
-           <Catogaries></Catogaries>
+            <Routes>
+              <Route path='/' element={<Catogaries></Catogaries>}></Route>
+              <Route path='/subCat' element={<Subcategories></Subcategories>}></Route>
+              <Route path='/assemble' element={<Assemblies></Assemblies>}></Route>
+            </Routes>
           </div>
           <div className='home_divider'></div>
           <div className='job_area_parent'>
